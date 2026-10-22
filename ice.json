@@ -1,10 +1,44 @@
 {
-  "note": "Shared connection list for every Coffeebreak phone and WifiSIM app. To add a Metered relay key, add its turn: and turns: entries (port 443 TCP/TLS) to iceServers.",
-  "updated": "2026-10-22",
-  "iceServers": [
-    {"urls": ["stun:stun.l.google.com:19302", "stun:stun1.l.google.com:19302", "stun:stun2.l.google.com:19302", "stun:stun3.l.google.com:19302", "stun:stun4.l.google.com:19302"]},
-    {"urls": "stun:stun.cloudflare.com:3478"},
-    {"urls": "stun:global.stun.twilio.com:3478"},
-    {"urls": "stun:stun.nextcloud.com:443"}
-  ]
+ "note": "Shared connection list for every Coffeebreak phone and WifiSIM app. Direct paths are tried first; the Metered relay (free 500 MB a month) is only used when needed.",
+ "updated": "2026-10-22",
+ "iceServers": [
+  {
+   "urls": [
+    "stun:stun.l.google.com:19302",
+    "stun:stun1.l.google.com:19302",
+    "stun:stun2.l.google.com:19302",
+    "stun:stun3.l.google.com:19302",
+    "stun:stun4.l.google.com:19302"
+   ]
+  },
+  {
+   "urls": "stun:stun.cloudflare.com:3478"
+  },
+  {
+   "urls": "stun:global.stun.twilio.com:3478"
+  },
+  {
+   "urls": "stun:stun.nextcloud.com:443"
+  },
+  {
+   "urls": "turn:global.relay.metered.ca:80",
+   "username": "fbcff5d24c6b2dc747ebf467",
+   "credential": "Q25Ljae87jPAQ0Bo"
+  },
+  {
+   "urls": "turn:global.relay.metered.ca:80?transport=tcp",
+   "username": "fbcff5d24c6b2dc747ebf467",
+   "credential": "Q25Ljae87jPAQ0Bo"
+  },
+  {
+   "urls": "turn:global.relay.metered.ca:443",
+   "username": "fbcff5d24c6b2dc747ebf467",
+   "credential": "Q25Ljae87jPAQ0Bo"
+  },
+  {
+   "urls": "turns:global.relay.metered.ca:443?transport=tcp",
+   "username": "fbcff5d24c6b2dc747ebf467",
+   "credential": "Q25Ljae87jPAQ0Bo"
+  }
+ ]
 }
